@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0a0a1a;
+    color: #e0e0e0;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.circuit-pattern {
+    background-image: 
+        linear-gradient(to bottom, rgba(0, 100, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.slide {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.glow-text {
+    text-shadow: 0 0 10px rgba(0, 255, 150, 0.7);
+}
+
+.tech-card {
+    background: rgba(10, 20, 40, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 150, 0.3);
+    box-shadow: 0 0 20px rgba(0, 255, 150, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 255, 150, 0.2);
+    border-color: rgba(0, 255, 150, 0.7);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #00ff96;
+    box-shadow: 0 0 0 4px rgba(0, 255, 150, 0.3);
+}
+
+.timeline-connector {
+    position: absolute;
+    left: -16px;
+    top: 10px;
+    bottom: -10px;
+    width: 2px;
+    background: rgba(0, 255, 150, 0.5);
+}
+
+.robot-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 255, 150, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 255, 150, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 255, 150, 0); }
+}

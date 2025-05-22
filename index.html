@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Jornada com Robótica LEGO NXT</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="tech-bg">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg border-b border-gray-800">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-robot text-2xl text-green-400"></i>
+                <span class="text-xl font-bold text-white">ScriptBot</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#slide1" class="text-gray-300 hover:text-green-400 transition">Início</a>
+                <a href="#slide2" class="text-gray-300 hover:text-green-400 transition">Linha do Tempo</a>
+                <a href="#slide3" class="text-gray-300 hover:text-green-400 transition">Equipes</a>
+                <a href="#slide4" class="text-gray-300 hover:text-green-400 transition">LEGO NXT</a>
+                <a href="#slide9" class="text-gray-300 hover:text-green-400 transition">Missão</a>
+            </div>
+            <button class="md:hidden text-gray-300 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Slide 1: Title Slide -->
+    <section id="slide1" class="slide flex items-center justify-center hexagon-pattern">
+        <div class="container mx-auto px-6 py-20 text-center relative z-10">
+            <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-20">
+                <div class="robot-icon text-9xl">
+                    <!-- Altere o ícone abaixo para mudar a imagem do robô na tela inicial -->
+                    <i class="fas fa-robot"></i>
+                </div>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white glow-text">
+                Minha Jornada com a <span class="text-green-400">Robótica LEGO NXT</span>
+            </h1>
+            
+            <h2 class="text-2xl md:text-3xl text-gray-300 mb-10">
+                Gabriel Silva Oliveira - Programador de Robôs LEGO NXT
+            </h2>
+            
+            <div class="max-w-4xl mx-auto tech-card rounded-xl p-8 mb-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="flex justify-center">
+                        <!-- Altere o conteúdo abaixo para mudar a imagem/ícone ao lado das informações das competições -->
+                        <div class="w-64 h-64 bg-gray-800 rounded-lg flex items-center justify-center pulse overflow-hidden">
+                            <img src="1.png" alt="Equipe ScriptBot" class="object-cover w-full h-full" />
+                        </div>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold text-green-400 mb-4">Competições OBR 2023-2024</h3>
+                        <p class="text-gray-300 mb-4">
+                            Uma jornada de aprendizado, desafios e superação através da robótica educacional.
+                        </p>
+                        <div class="flex space-x-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-calendar-alt text-green-400 mr-2"></i>
+                                <span>2 anos</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-users text-green-400 mr-2"></i>
+                                <span>2 equipes</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-trophy text-green-400 mr-2"></i>
+                                <span>Muito aprendizado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-10">
+                <a href="#slide2" class="inline-flex items-center px-6 py-3 bg-green-500 hover:bg-green-600 rounded-lg text-white font-medium transition-all transform hover:scale-105">
+                    Explorar Jornada <i class="fas fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black to-transparent"></div>
+    </section>
+
+    <!-- Slide 2: Timeline -->
+    <section id="slide2" class="slide flex items-center justify-center circuit-pattern">
+        <div class="container mx-auto px-6 py-20">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+                <span class="text-green-400">Competições</span> da OBR
+                <span class="block text-xl text-gray-400 mt-2">2023 e 2024</span>
+            </h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <!-- Timeline connector -->
+                    <div class="absolute left-1/2 h-full w-1 bg-green-500 bg-opacity-30 transform -translate-x-1/2"></div>
+                    
+                    <!-- Timeline item 1 -->
+                    <div class="mb-16 flex justify-between items-center w-full">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-green-500 shadow-xl w-8 h-8 rounded-full">
+                            <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
+                        </div>
+                        <div class="order-1 tech-card w-5/12 px-6 py-4 rounded-lg">
+                            <h3 class="text-xl font-bold text-green-400 mb-2">2023 - Primeira Competição</h3>
+                            <p class="text-gray-300">
+                                Centro de Convenções da UFPE<br>
+                                Experiência inicial com programação de robôs<br>
+                                Desafios de montagem e calibração
+                            </p>
+                            <div class="mt-3 flex items-center text-sm text-gray-400">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Recife, PE
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline item 2 -->
+                    <div class="mb-16 flex justify-between items-center w-full flex-row-reverse">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-green-500 shadow-xl w-8 h-8 rounded-full">
+                            <h1 class="mx-auto font-semibold text-lg text-white">2</h1>
+                        </div>
+                        <div class="order-1 tech-card w-5/12 px-6 py-4 rounded-lg">
+                            <h3 class="text-xl font-bold text-green-400 mb-2">2024 - Segunda Participação</h3>
+                            <p class="text-gray-300">
+                                Recife Expo Center<br>
+                                Aplicação de aprendizados anteriores<br>
+                                Melhorias na programação e estratégia
+                            </p>
+                            <div class="mt-3 flex items-center text-sm text-gray-400">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Recife, PE
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline item 3 -->
+                    <div class="mb-16 flex justify-between items-center w-full">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-green-500 shadow-xl w-8 h-8 rounded-full">
+                            <h1 class="mx-auto font-semibold text-lg text-white">3</h1>
+                        </div>
+                        <div class="order-1 tech-card w-5/12 px-6 py-4 rounded-lg">
+                            <h3 class="text-xl font-bold text-green-400 mb-2">Lições Aprendidas</h3>
+                            <p class="text-gray-300">
+                                • Simplicidade na programação<br>
+                                • Importância dos testes<br>
+                                • Trabalho em equipe<br>
+                                • Adaptação às regras
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Team Members -->
+    <section id="slide3" class="slide flex items-center justify-center hexagon-pattern">
+        <div class="container mx-auto px-6 py-20">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+                Membros das <span class="text-green-400">Equipes ScriptBot</span>
+            </h2>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Team 2023 -->
+                    <div class="tech-card rounded-xl p-6">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-calendar text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-green-400">2023 - ScriptBot Alfa</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-code text-white text-sm"></i>
+                                </div>
+                                <span class="font-medium">Gabriel Silva Oliveira</span> (programador)
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-cogs text-white text-sm"></i>
+                                </div>
+                                <span>Leonardo</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-tools text-white text-sm"></i>
+                                </div>
+                                <span>Daniel</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-8 pt-6 border-t border-gray-700">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-calendar text-white"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-green-400">2023 - ScriptBot</h3>
+                            </div>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-code text-white text-sm"></i>
+                                    </div>
+                                    <span>Raniele</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-cogs text-white text-sm"></i>
+                                    </div>
+                                    <span>João Pedro</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Team 2024 -->
+                    <div class="tech-card rounded-xl p-6">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-calendar text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-green-400">2024 - ScriptBot Alfa</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-code text-white text-sm"></i>
+                                </div>
+                                <span class="font-medium">Gabriel Silva Oliveira</span> (programador)
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-cogs text-white text-sm"></i>
+                                </div>
+                                <span>Leonardo</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-tools text-white text-sm"></i>
+                                </div>
+                                <span>Daniel</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-lightbulb text-white text-sm"></i>
+                                </div>
+                                <span>João Vitor</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-8 pt-6 border-t border-gray-700">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-calendar text-white"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-green-400">2024 - ScriptBot</h3>
+                            </div>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-code text-white text-sm"></i>
+                                    </div>
+                                    <span>João Manuel</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-cogs text-white text-sm"></i>
+                                    </div>
+                                    <span>Diam</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-tools text-white text-sm"></i>
+                                    </div>
+                                    <span>Jamilly</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 tech-card rounded-xl p-8">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                            <!-- Imagem adicionada ao lado das habilidades da equipe -->
+                            <div class="w-48 h-48 bg-gray-800 rounded-full flex items-center justify-center pulse overflow-hidden">
+                                <img src="2.jpg" alt="Equipe ScriptBot" class="object-cover w-full h-full" />
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 md:pl-8">
+                            <h3 class="text-2xl font-bold text-green-400 mb-4">Trabalho em Equipe</h3>
+                            <p class="text-gray-300 mb-4">
+                                Cada membro trouxe habilidades únicas para o projeto. Enquanto alguns focavam na programação, outros se dedicavam à montagem mecânica ou estratégia de competição.
+                            </p>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-code text-green-400 mr-2"></i>
+                                    <span>Programação</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-cogs text-green-400 mr-2"></i>
+                                    <span>Mecânica</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-brain text-green-400 mr-2"></i>
+                                    <span>Estratégia</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-tools text-green-400 mr-2"></i>
+                                    <span>Montagem</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-stopwatch text-green-400 mr-2"></i>
+                                    <span>Tempo</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-lightbulb text-green-400 mr-2"></i>
+                                    <span>Criatividade</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: What is LEGO NXT -->
+    <section id="slide4" class="slide flex items-center justify-center circuit-pattern">
+        <div class="container mx-auto px-6 py-20">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+                O que é o <span class="text-green-400">LEGO NXT</span>?
+            </h2>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="tech-card rounded-xl p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-robot text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-green-400">Plataforma Educacional</h3>
+                        </div>
+                        <p class="text-gray-300 mb-6">
+                            O LEGO Mindstorms NXT é uma plataforma revolucionária da LEGO voltada para educação em robótica, programação e engenharia. Combinando peças tradicionais da LEGO com sensores, motores e um bloco controlador programável, ele permite criar robôs inteligentes capazes de interagir com o ambiente.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-microchip text-green-400 mr-2"></i>
+                                <span>Processador ARM7</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-memory text-green-400 mr-2"></i>
+                                <span>256KB Flash</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-bluetooth text-green-400 mr-2"></i>
+                                <span>Conexão sem fio</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-usb text-green-400 mr-2"></i>
+                                <span>Porta USB</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800 bg-opacity-50 rounded-lg p-4 border border-gray-700">
+                            <h4 class="text-green-400 font-bold mb-2">Por que usar LEGO NXT?</h4>
+                            <ul class="text-gray-300 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                    <span>Aprendizado prático de lógica de programação</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                    <span>Desenvolvimento de habilidades de engenharia</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                    <span>Estimula criatividade e resolução de problemas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                    <span>Base para competições de robótica como a OBR</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card rounded-xl p-8">
+                        <div class="flex justify-center mb-6">
+                            <div class="w-64 h-64 bg-gray-800 rounded-lg flex items-center justify-center pulse overflow-hidden">
+                                <img src="lego nxt.jpg" alt="LEGO NXT" class="object-cover w-full h-full" />
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-green-400 mb-4">Componentes Principais</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-brain text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-300">NXT Intelligent Brick</h4>
+                                    <p class="text-gray-400 text-sm">O "cérebro" do robô com processador, memória e interfaces</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-bolt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-300">Motores Servo</h4>
+                                    <p class="text-gray-400 text-sm">3 motores com encoder para movimento preciso</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-eye text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-300">Sensores</h4>
+                                    <p class="text-gray-400 text-sm">Toque, som, luz, ultrassônico e mais</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-puzzle-piece text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-300">Peças LEGO</h4>
+                                    <p class="text-gray-400 text-sm">Sistema de montagem versátil e criativo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 tech-card rounded-xl p-8">
+                    <h3 class="text-2xl font-bold text-green-400 mb-6 text-center">Sensores do LEGO NXT</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-green-400 transition">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center overflow-hidden">
+                                    <img src="imag_sen/luz.png" alt="Sensor de Luz" class="object-contain w-12 h-12" />
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-bold text-center text-gray-300 mb-2">Sensor de Luz</h4>
+                            <p class="text-gray-400 text-center">
+                                Detecta intensidade luminosa (0-100%). Essencial para seguir linhas em competições.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-green-400 transition">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center overflow-hidden">
+                                    <img src="imag_sen/ultrassonico.png" alt="Sensor Ultrassônico" class="object-contain w-12 h-12" />
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-bold text-center text-gray-300 mb-2">Sensor Ultrassônico</h4>
+                            <p class="text-gray-400 text-center">
+                                Mede distâncias (0-255 cm) usando ondas sonoras. Detecta obstáculos.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-green-400 transition">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center overflow-hidden">
+                                    <img src="imag_sen/toque.png" alt="Sensor de Toque" class="object-contain w-12 h-12" />
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-bold text-center text-gray-300 mb-2">Sensor de Toque</h4>
+                            <p class="text-gray-400 text-center">
+                                Botão simples (pressionado/não pressionado). Útil para iniciar ações.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: Block Programming -->
+    <section id="slide5" class="slide flex items-center justify-center hexagon-pattern">
+        <div class="container mx-auto px-6 py-20">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+                Como programamos <span class="text-green-400">com blocos</span>?
+            </h2>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="tech-card rounded-xl p-8 mb-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-green-400 mb-4">Ambiente NXT-G</h3>
+                            <p class="text-gray-300 mb-6">
+                                O software NXT-G utiliza uma abordagem visual de programação por blocos, onde cada bloco representa uma função ou comando específico. Os blocos são conectados para formar o fluxo do programa.
+                            </p>
+                            
+                            <div class="bg-gray-800 bg-opacity-50 rounded-lg p-4 border border-gray-700 mb-6">
+                                <h4 class="text-green-400 font-bold mb-2">Vantagens</h4>
+                                <ul class="text-gray-300 space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                        <span>Intuitivo para iniciantes</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                        <span>Visualização clara do fluxo</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                        <span>Não requer conhecimento prévio de sintaxe</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center">
+                            <div class="w-full max-w-md bg-gray-800 rounded-lg overflow-hidden">
+                                <div class="bg-gray-900 p-3 flex items-center">
+                                    <div class="flex space-x-2">
+                                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                    </div>
+                                    <div class="ml-4 text-sm text-gray-400">NXT-G - program.nxt</div>
+                                </div>
+                                <div class="p-4">
+                                    <div class="bg-blue-900 bg-opacity-50 p-3 rounded mb-2 border-l-4 border-blue-400">
+                                        <div class="text-white text-sm">Start</div>
+                                    </div>
+                                    <div class="bg-green-900 bg-opacity-50 p-3 rounded mb-2 border-l-4 border-green-400">
+                                        <div class="text-white text-sm">Move [B+C] - Power: 75 - Duration: Unlimited</div>
+                                    </div>
+                                    <div class="bg-purple-900 bg-opacity-50 p-3 rounded mb-2 border-l-4 border-purple-400">
+                                        <div class="text-white text-sm">Loop</div>
+                                        <div class="ml-4 mt-2">
+                                            <div class="bg-yellow-900 bg-opacity-50 p-2 rounded mb-1 border-l-4 border-yellow-400">
+                                                <div class="text-white text-sm">Switch [Light Sensor]</div>
+                                            </div>
+                                            <div class="grid grid-cols-2 gap-2 ml-4">
+                                                <div class="bg-red-900 bg-opacity-50 p-2 rounded border-l-4 border-red-400">
+                                                    <div class="text-white text-sm">[Case 1] Move Left</div>
+                                                </div>
+                                                <div class="bg-blue-900 bg-opacity-50 p-2 rounded border-l-4 border-blue-400">
+                                                    <div class="text-white text-sm">[Case 2] Move Right</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="text-3xl font-bold text-center text-green-400 mb-8">Principais Blocos de Programação</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="tech-card rounded-lg p-6 hover:border-green-400 transition">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-arrows-alt text-2xl text-white"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold text-center text-gray-300 mb-2">Move</h4>
+                        <p class="text-gray-400 text-center">
+                            Controla os motores para fazer o robô andar para frente, trás ou girar.
+                        </p>
+                    </div>
+                    
+                    <div class="tech-card rounded-lg p-6 hover:border-green-400 transition">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-redo text-2xl text-white"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold text-center text-gray-300 mb-2">Loop</h4>
+                        <p class="text-gray-400 text-center">
+                            Repete um conjunto de comandos continuamente ou um número específico de vezes.
+                        </p>
+                    </div>
+                    
+                    <div class="tech-card rounded-lg p-6 hover:border-green-400 transition">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-code-branch text-2xl text-white"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold text-center text-gray-300 mb-2">Switch</h4>
+                        <p class="text-gray-400 text-center">
+                            Toma decisões baseadas em entradas de sensores ou condições lógicas.
+                        </p>
+                    </div>
+                    
+                    <div class="tech-card rounded-lg p-6 hover:border-green-400 transition">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-sensor text-2xl text-white"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold text-center text-gray-300 mb-2">Sensor Blocks</h4>
+                        <p class="text-gray-400 text-center">
+                            Lê dados dos sensores (luz, toque, ultrassônico) para interação com o ambiente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: Sensors and Robot Brain -->
+    <section id="slide6" class="slide flex items-center justify-center circuit-pattern">
+        <div class="container mx-auto px-6 py-20">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+                Sensores e o <span class="text-green-400">Cérebro do Robô</span>
+            </h2>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="tech-card rounded-xl p-8 mb-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-green-400 mb-4">Como o robô "vê" o mundo</h3>
+                            <p class="text-gray-300 mb-6">
+                                Os sensores são os olhos, ouvidos e mãos do robô LEGO NXT. Eles permitem que o robô perceba e interaja com seu ambiente, tornando possível comportamentos autônomos e inteligentes.
+                            </p>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-xl font-bold text-gray-300 mb-2 flex items-center">
+                                    <i class="fas fa-lightbulb text-green-400 mr-2"></i>
+                                    Sensor de Luz
+                                </h4>
+                                <p class="text-gray-400">
+                                    Identifica a intensidade luminosa refletida (0-100%). Fundamental para seguir linhas em competições, distinguindo entre superfícies claras e escuras.
+                                </p>
+                                <div class="mt-2 bg-gray-800 rounded p-3">
+                                    <div class="flex justify-between text-xs text-gray-400 mb-1">
+                                        <span>0%</span>
+                                        <span>100%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                        <div class="bg-green-400 h-2.5 rounded-full" style="width: 30%"></div>
+                                    </div>
+                                    <div class="mt-1 text-xs text-gray-400">Valor lido: 30 (pista escura)</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-300 mb-2 flex items-center">
+                                    <i class="fas fa-wave-square text-green-400 mr-2"></i>
+                                    Sensor Ultrassônico
+                                </h4>
+                                <p class="text-gray-400">
+                                    Emite ondas sonoras e mede o tempo de retorno para calcular distâncias (0-255 cm). Essencial para detectar e desviar de obstáculos.
+                                </p>
+                                <div class="mt-2 bg-gray-800 rounded p-3">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-robot text-gray-400 mr-2"></i>
+                                        <div class="flex-1 bg-gray-700 rounded-full h-2.5">
+                                            <div class="bg-green-400 h-2.5 rounded-full" style="width: 60%"></div>
+                                        </div>
+                                        <i class="fas fa-cube text-gray-400 ml-2"></i>
+                                    </div>
+                                    <div class="mt-1 text-xs text-gray-400">Distância: 40 cm</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="bg-gray-800 rounded-lg p-6 mb-6">
+                                <h4 class="text-xl font-bold text-gray-300 mb-4 text-center">Fluxo de Decisão do Robô</h4>
+                                <div class="flex justify-center">
+                                    <div class="relative">
+                                        <!-- Robot -->
+                                        <div class="w-16 h-16 bg-gray-700 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                                            <i class="fas fa-robot text-2xl text-green-400"></i>
+                                        </div>
+                                        
+                                        <!-- Arrows -->
+                                        <div class="absolute left-1/2 transform -translate-x-1/2 -bottom-4 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-green-400"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Decision diamond -->
+                                <div class="flex justify-center my-4">
+                                    <div class="w-24 h-24 bg-blue-900 bg-opacity-50 transform rotate-45 flex items-center justify-center">
+                                        <div class="transform -rotate-45 text-center">
+                                            <span class="text-xs font-bold text-white">Sensor</span>
+                                            <div class="text-xs text-gray-300">Luz &lt; 30?</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Arrows from decision -->
+                                <div class="flex justify-between px-8">
+                                    <div class="text-center">
+                                        <div class="mx-auto w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-green-400"></div>
+                                        <div class="text-xs mt-1 text-green-400">Sim</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="mx-auto w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-red-400"></div>
+                                        <div class="text-xs mt-1 text-red-400">Não</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Actions -->
+                                <div class="grid grid-cols-2 gap-4 mt-4">
+                                    <div class="bg-green-900 bg-opacity-30 p-3 rounded text-center">
+                                        <i class="fas fa-arrow-circle-left text-green-400 mb-1"></i>
+                                        <div class="text-xs text-white">Virar à esquerda</div>
+                                    </div>
+                                    <div class="bg-red-900 bg-opacity-30 p-3 rounded text-center">
+                                        <i class="fas fa-arrow-circle-right text-red-400 mb-1"></i>
+                                        <div class="text-xs text-white">Virar à direita</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-800 rounded-lg p-6">
+                                <h4 class="text-xl font-bold text-gray-300 mb-4 text-center">NXT Intelligent Brick</h4>
+                                <div class="flex justify-center mb-4">
+                                    <div class="w-32 h-40 bg-gray-900 rounded-lg border-2 border-gray-700 p-4">
+                                        <div class="grid grid-cols-3 gap-2 mb-2">
+                                            <div class="h-2 bg-gray-700 rounded"></div>
+                                            <div class="h-2 bg-gray-700 rounded"></div>
+                                            <div class="h-2 bg-gray-700 rounded"></div>
+                                        </div>
+                                        <div class="h-16 bg-gray-700 rounded mb-2 flex items-center justify-center">
+                                            <span class="text-xs text-gray-300">LCD</span>
+                                        </div>
+                                        <div class="grid grid-cols-4 gap-1">
+                                            <div class="h-6 bg-gray-600 rounded"></div>
+                                            <div class="h-6 bg-gray-600 rounded"></div>
+                                            <div class="h-6 bg-gray-600 rounded"></div>
+                                            <div class="h-6 bg-gray-600 rounded"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="text-gray-400 text-sm space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-microchip text-green-400 mt-1 mr-2"></i>
+                                        <span>Processador ARM7 de 32-bit (48 MHz)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-memory text-green-400 mt-1 mr-2"></i>
+                                        <span>256KB Flash, 64KB RAM</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-plug text-green-400 mt-1 mr-2"></i>
+                                        <span>4 portas de entrada, 3 portas de saída</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-bluetooth text-green-400 mt-1 mr-2"></i>
+                                        <span>Conexão sem fio via Bluetooth</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: Errors and Successes -->
+    <section id="slide7" class="slide flex items-center justify-center hexagon-pattern">
+        <div class="container mx-auto px-6 py-20">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+                <span class="text-red-400">Erros</span> e <span class="text-green-400">Acertos</span>
+            </h2>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="tech-card rounded-xl p-8 mb-10">
+                    <h3 class="text-2xl font-bold text-center text-gray-300 mb-8">Lições Aprendidas nas Competições</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-gray-800 rounded-lg p-6 border border-red-500 border-opacity-50">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-times text-white"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-red-400">Robô Complexo Demais</h4>
+                            </div>
+                            <p class="text-gray-300 mb-4">
+                                Na primeira competição, desenvolvemos um robô com muitas funcionalidades e lógica complexa, que acabou falhando devido a:
+                            </p>
+                            <ul class="text-gray-400 space-y-2 mb-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-microchip text-red-400 mt-1 mr-2"></i>
+                                    <span>Sobrecarga do processador (CPU do NXT)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-clock text-red-400 mt-1 mr-2"></i>
+                                    <span>Latência nas respostas aos sensores</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-bug text-red-400 mt-1 mr-2"></i>
+                                    <span>Dificuldade para depurar problemas</span>
+                                </li>
+                            </ul>
+                            <div class="bg-gray-900 rounded p-3 text-sm text-gray-400">
+                                <i class="fas fa-quote-left text-red-400 mr-1"></i>
+                                Às vezes, menos é mais. A complexidade pode ser inimiga da confiabilidade.
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-lg p-6 border border-green-500 border-opacity-50">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-check text-white"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-green-400">Robô Simplificado</h4>
+                            </div>
+                            <p class="text-gray-300 mb-4">
+                                Na segunda competição, optamos por uma abordagem mais simples que resultou em:
+                            </p>
+                            <ul class="text-gray-400 space-y-2 mb-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-bolt text-green-400 mt-1 mr-2"></i>
+                                    <span>Respostas mais rápidas aos sensores</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-shield-alt text-green-400 mt-1 mr-2"></i>
+                                    <span>Maior confiabilidade e menos falhas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-trophy text-green-400 mt-1 mr-2"></i>
+                                    <span>Melhor pontuação nas provas</span>
+                                </li>
+                            </ul>
+                            <div class="bg-gray-900 rounded p-3 text-sm text-gray-400">
+                                <i class="fas fa-quote-left text-green-400 mr-1"></i>
+                                A simplicidade nos permitiu focar no essencial e executar com excelência.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-card rounded-xl p-8">
+                    <h3 class="text-2xl font-bold text-center text-gray-300 mb-8">Relação entre Montagem e Programação</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gray-800 rounded-lg p-6 text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-ruler-combined text-2xl text-white"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-bold text-blue-400 mb-2">Geometria do Robô</h4>
+                            <p class="text-gray-400">
+                                A distância entre as rodas e o posicionamento dos sensores afetam diretamente os parâmetros de programação.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-lg p-6 text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-balance-scale-right text-2xl text-white"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-bold text-purple-400 mb-2">Distribuição de Peso</h4>
+                            <p class="text-gray-400">
+                                Um robô desbalanceado requer ajustes na potência dos motores e pode afetar a precisão dos sensores.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-lg p-6 text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-sliders-h text-2xl text-white"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-bold text-green-400 mb-2">Calibração de Sensores</h4>
+                            <p class="text-gray-400">
+                                A altura e ângulo dos sensores em relação à pista determinam os valores limiares na programação.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 bg-gray-900 bg-opacity-50 rounded-lg p-6 border border-gray-700">
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                                <div class="w-32 h-32 bg-gray-800 rounded-full flex items-center justify-center border-2 border-green-400">
+                                    <i class="fas fa-robot text-5xl text-green-400"></i>
+                                </div>
+                            </div>
+                            <div class="md:w-2/3 md:pl-8">
+                                <h4 class="text-xl font-bold text-green-400 mb-3">Principais Aprendizados</h4>
+                                <ul class="text-gray-300 space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                        <span>Testar cada componente isoladamente antes da integração</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                        <span>Documentar todas as alterações na montagem e programação</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                        <span>Manter versões de backup do programa funcional</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                        <span>Priorizar robustez sobre complexidade</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 8: Simple Logic -->
+    <section id="slide8" class="slide flex items-center justify-center circuit-pattern">
+        <div class="container mx-auto px-6 py-20">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+                <span class="text-green-400">Lógica Simples</span> = Sucesso
+            </h2>
+            
+            <div class="max-w-4xl mx-auto tech-card rounded-xl p-8 mb-10">
+                <div class="text-center mb-10">
+                    <h3 class="text-2xl font-bold text-green-400 mb-4">Algoritmo para Seguir Linha</h3>
+                    <p class="text-gray-300 mb-6">
+                        A solução mais eficaz nas competições foi um algoritmo simples de seguir linha baseado em valores limiares do sensor de luz.
+                    </p>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-center gap-8 mb-8">
+                        <div class="bg-gray-900 rounded-lg p-6 flex-1">
+                            <h4 class="text-green-400 font-bold mb-2 text-center">Fluxograma</h4>
+                            <ul class="text-gray-300 text-left space-y-2">
+                                <li><strong>Início</strong></li>
+                                <li>Loop Infinito</li>
+                                <li>Sensor de Luz &lt; 30?</li>
+                                <li class="ml-4">Sim → Virar à esquerda</li>
+                                <li class="ml-4">Não → Virar à direita</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-900 rounded-lg p-6 flex-1">
+                            <h4 class="text-green-400 font-bold mb-2 text-center">Código em Blocos NXT-G</h4>
+                            <pre class="text-green-400 text-sm md:text-base text-left whitespace-pre-line bg-gray-800 rounded p-4 overflow-x-auto">
+Start
+  Move Forward (Motors B+C, Power 75)
+  Loop Forever
+    Switch (Light Sensor)
+      Case 1 (Value < 30)
+        Move Left (Motor C forward, Motor B backward)
+      Case 2 (Value >= 30)
+        Move Right (Motor B forward, Motor C backward)
+    End Switch
+  End Loop
+End
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-card rounded-xl p-8">
+                <h3 class="text-2xl font-bold text-center text-gray-300 mb-8">Por que a simplicidade funciona?</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gray-800 rounded-lg p-6">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-bolt text-2xl text-white"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold text-center text-blue-400 mb-2">Resposta Rápida</h4>
+                        <p class="text-gray-400 text-center">
+                            Menos processamento significa decisões mais rápidas, essencial para pistas com curvas fechadas.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-lg p-6">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-2xl text-white"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold text-center text-purple-400 mb-2">Confiabilidade</h4>
+                        <p class="text-gray-400 text-center">
+                            Menos blocos = menos pontos de falha. O robô se recupera mais facilmente de erros.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-lg p-6">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-tools text-2xl text-white"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold text-center text-green-400 mb-2">Facilidade de Ajuste</h4>
+                        <p class="text-gray-400 text-center">
+                            Parâmetros como valores limiares e potência dos motores podem ser ajustados rapidamente.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-gray-900 bg-opacity-50 rounded-lg p-6 border border-gray-700">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                            <div class="w-32 h-32 bg-gray-800 rounded-full flex items-center justify-center border-2 border-green-400">
+                                <i class="fas fa-lightbulb text-5xl text-green-400"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 md:pl-8">
+                            <h4 class="text-xl font-bold text-green-400 mb-3">Dica para Competições</h4>
+                            <p class="text-gray-300 mb-4">
+                                Comece com a solução mais simples possível e só adicione complexidade se necessário. Na maioria dos casos, um algoritmo básico de seguir linha com ajustes finos é mais eficaz que soluções sofisticadas.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-400">
+                                <i class="fas fa-robot text-green-400 mr-2"></i>
+                                <span>Nosso robô simplificado pontuou 50% a mais que a versão complexa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 9: Mission -->
+    <section id="slide9" class="slide flex items-center justify-center hexagon-pattern">
+        <div class="container mx-auto px-6 py-20">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+                Missão para os <span class="text-green-400">futuros robóticos</span>!
+            </h2>
+            
+            <div class="max-w-4xl mx-auto tech-card rounded-xl p-8 mb-10">
+                <div class="text-center">
+                    <div class="flex justify-center mb-8">
+                        <div class="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center pulse">
+                            <i class="fas fa-bullseye text-4xl text-white"></i>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-green-400 mb-6">Desafio Inicial</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                        <div class="bg-gray-800 rounded-lg p-6 hover:border-green-400 transition">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-robot text-xl text-white"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-lg font-bold text-center text-gray-300 mb-2">Montar um robô estável</h4>
+                            <p class="text-gray-400 text-sm">
+                                Base larga, sensores na altura correta e motores alinhados.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-lg p-6 hover:border-green-400 transition">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-code text-xl text-white"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-lg font-bold text-center text-gray-300 mb-2">Programar com blocos simples</h4>
+                            <p class="text-gray-400 text-sm">
+                                Comece com movimento básico e adicione sensores gradualmente.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-lg p-6 hover:border-green-400 transition">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-vial text-xl text-white"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-lg font-bold text-center text-gray-300 mb-2">Testar com pista</h4>
+                            <p class="text-gray-400 text-sm">
+                                Use uma pista preta com curvas de diferentes raios para calibrar.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-900 rounded-lg p-6 mb-8">
+                        <h4 class="text-xl font-bold text-green-400 mb-4">Passo a Passo Inicial</h4>
+                        <ol class="text-gray-300 space-y-3">
+                            <li class="flex items-start">
+                                <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">1</span>
+                                <span>Montar chassi básico com 2 rodas motrizes e 1 roda livre</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">2</span>
+                                <span>Posicionar sensor de luz ~1cm acima da pista, centralizado</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">3</span>
+                                <span>Programar movimento para frente contínuo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">4</span>
+                                <span>Adicionar lógica de decisão baseada no sensor de luz</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">5</span>
+                                <span>Testar e ajustar valores limiares e potência dos motores</span>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="flex justify-center">
+                        <div class="w-full max-w-md bg-gray-800 rounded-lg p-6">
+                            <h4 class="text-xl font-bold text-green-400 mb-4 text-center">Pista de Teste Recomendada</h4>
+                            <div class="relative h-40 bg-gray-700 rounded mb-4 overflow-hidden">
+                                <!-- Track representation -->
+                                <div class="absolute top-1/2 left-0 right-0 h-8 bg-black transform -translate-y-1/2"></div>
+                                <div class="absolute top-1/2 left-1/4 w-1/2 h-8 bg-black transform -translate-y-1/2 rounded-full" style="clip-path: circle(50% at 50% 50%)"></div>
+                                <div class="absolute top-1/2 left-3/4 w-1/4 h-8 bg-black transform -translate-y-1/2" style="clip-path: polygon(0 0, 100% 50%, 0 100%)"></div>
+                                
+                                <!-- Robot silhouette -->
+                                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                    <div class="w-12 h-12 bg-gray-800 rounded-full"></div>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-400 text-sm text-center">
+                                Uma pista de teste simples consiste em uma linha preta contínua sobre um fundo branco, com curvas suaves para testar a capacidade de seguir linha do robô.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO: Exemplo Simples de Seguidor de Linha com 4 Motores -->
+    <section id="slide10" class="slide flex items-center justify-center circuit-pattern">
+        <div class="container mx-auto px-6 py-20">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+                Exemplo Simples: Seguidor de Linha com 4 Motores
+            </h2>
+            
+            <div class="max-w-4xl mx-auto tech-card rounded-xl p-8 mb-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-green-400 mb-4">Exemplo Simples: Seguidor de Linha (4 Motores)</h3>
+                        <p class="text-gray-300 mb-6">
+                            Este exemplo mostra um programa básico de seguidor de linha usando 4 motores no LEGO NXT. O robô utiliza um loop contínuo e uma condição baseada no sensor de luz para decidir o movimento dos motores. Ideal para robôs maiores ou que precisam de mais força e estabilidade.
+                        </p>
+                        <div class="bg-gray-800 bg-opacity-50 rounded-lg p-4 border border-gray-700 mb-6">
+                            <h4 class="text-green-400 font-bold mb-2">Lógica do Programa</h4>
+                            <ul class="text-gray-300 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-play text-green-400 mt-1 mr-2"></i>
+                                    <span>Start</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-redo text-green-400 mt-1 mr-2"></i>
+                                    <span>Loop Infinito</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-question text-green-400 mt-1 mr-2"></i>
+                                    <span>Se Sensor de Luz &lt; 30:</span>
+                                </li>
+                                <li class="flex items-start ml-6">
+                                    <i class="fas fa-arrow-left text-blue-400 mt-1 mr-2"></i>
+                                    <span>Ative motores A e B para virar à esquerda (C e D parados)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-ellipsis-h text-green-400 mt-1 mr-2"></i>
+                                    <span>Senão:</span>
+                                </li>
+                                <li class="flex items-start ml-6">
+                                    <i class="fas fa-arrow-right text-blue-400 mt-1 mr-2"></i>
+                                    <span>Ative motores C e D para virar à direita (A e B parados)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded overflow-x-auto text-green-400 text-sm md:text-base">
+<pre>Start
+  Loop Forever
+    If Light Sensor &lt; 30 Then
+      Motor A+B: Power 75 (esquerda)
+      Motor C+D: Power 0
+    Else
+      Motor C+D: Power 75 (direita)
+      Motor A+B: Power 0
+    End If
+  End Loop
+End</pre>
+                        </div>
+                        <p class="text-gray-400 mt-4 text-sm">
+                            <strong>Explicação:</strong> O robô lê o valor do sensor de luz. Se detectar linha preta (valor baixo), ativa os motores do lado esquerdo para corrigir a direção. Se detectar branco (valor alto), ativa os motores do lado direito. Isso mantém o robô seguindo a linha de forma simples e eficiente, mesmo com 4 motores.
+                        </p>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="w-full max-w-md bg-gray-800 rounded-lg overflow-hidden flex flex-col items-center">
+                            <img src="progama.png" alt="Exemplo Seguidor de Linha 4 Motores" class="object-contain w-full h-64 mb-4" />
+                            <span class="text-gray-400 text-xs">Exemplo visual de programação NXT-G para 4 motores</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

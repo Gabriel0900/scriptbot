@@ -19,12 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Função para ampliar imagens ao clicar
 function enableImageZoom() {
-    const images = document.querySelectorAll('img');
+    const images = Array.from(document.querySelectorAll('img'));
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
     const closeModal = document.getElementById('close-modal');
 
-    images.forEach(img => {
+    // Não aplicar zoom na imagem do modal
+    images.filter(img => img.id !== 'modal-img').forEach(img => {
         img.style.cursor = 'zoom-in';
         img.addEventListener('click', function (e) {
             e.stopPropagation();

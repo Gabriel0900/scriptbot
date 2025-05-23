@@ -1210,5 +1210,12 @@ End</pre>
             </div>
         </div>
     </section>
+
+    <!-- Modal para visualização de imagens ampliadas -->
+    <div id="image-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 hidden">
+        <span id="close-modal" class="absolute top-6 right-8 text-4xl text-white cursor-pointer select-none" title="Fechar">&times;</span>
+        <img id="modal-img" src="" alt="Imagem ampliada" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl border-4 border-green-400" />
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

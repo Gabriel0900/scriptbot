@@ -5,28 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Jornada com Robótica LEGO NXT</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="tech-bg">
+    <!-- Vídeo de fundo para desktop -->
+    <video id="bg-video-desktop" class="fixed top-0 left-0 w-full h-full object-cover z-0 hidden md:block" autoplay loop muted playsinline>
+        <source src="https://pvzh.giantapp.cn/upload/7ba4489763c74c71ad1716e120da8e05/wallpapers/33c5161d670cd1d40f7176aa0ca47e56/1728893335163_Uacn4.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo em HTML5.
+    </video>
+    <!-- Vídeo de fundo para mobile -->
+    <video id="bg-video-mobile" class="fixed top-0 left-0 w-full h-full object-cover z-0 block md:hidden" autoplay loop muted playsinline>
+        <source src="mob.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo em HTML5.
+    </video>
+    <div class="relative z-10">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg border-b border-gray-800">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-blue-900 bg-opacity-95 backdrop-filter backdrop-blur-lg border-b border-blue-800">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <i class="fas fa-robot text-2xl text-green-400"></i>
-                <span class="text-xl font-bold text-white">ScriptBot</span>
+                <i class="fas fa-robot text-2xl text-cyan-400"></i>
+                <span class="text-xl font-bold text-cyan-100">ScriptBot</span>
             </div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#slide1" class="text-gray-300 hover:text-green-400 transition">Início</a>
-                <a href="#slide2" class="text-gray-300 hover:text-green-400 transition">Linha do Tempo</a>
-                <a href="#slide3" class="text-gray-300 hover:text-green-400 transition">Equipes</a>
-                <a href="#slide4" class="text-gray-300 hover:text-green-400 transition">LEGO NXT</a>
-                <a href="#slide9" class="text-gray-300 hover:text-green-400 transition">Missão</a>
+            <div id="main-menu" class="hidden md:flex space-x-8">
+                <a href="#slide1" class="text-cyan-200 hover:text-cyan-400 transition">Início</a>
+                <a href="#slide2" class="text-cyan-200 hover:text-cyan-400 transition">Competições</a>
+                <a href="#slide3" class="text-cyan-200 hover:text-cyan-400 transition">Equipes</a>
+                <a href="#slide9" class="text-cyan-200 hover:text-cyan-400 transition">Missão</a>
+                <button id="fullscreen-btn" class="ml-4 px-3 py-1 rounded bg-cyan-700 hover:bg-cyan-600 text-cyan-100 font-semibold flex items-center transition"><i class="fas fa-expand mr-2"></i><span class="hidden sm:inline">Tela Cheia</span></button>
             </div>
-            <button class="md:hidden text-gray-300 focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
+            <button id="mobile-menu-btn" class="md:hidden text-cyan-200 focus:outline-none">
+                <i class="fas fa-bars text-3xl"></i>
             </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-900 bg-opacity-95 px-6 py-4 border-t border-blue-800">
+            <a href="#slide1" class="block py-2 text-cyan-200 hover:text-cyan-400">Início</a>
+            <a href="#slide2" class="block py-2 text-cyan-200 hover:text-cyan-400">Competições</a>
+            <a href="#slide3" class="block py-2 text-cyan-200 hover:text-cyan-400">Equipes</a>
+            <a href="#slide9" class="block py-2 text-cyan-200 hover:text-cyan-400">Missão</a>
+            <button id="fullscreen-btn-mobile" class="w-full mt-4 px-3 py-2 rounded bg-cyan-700 hover:bg-cyan-600 text-cyan-100 font-semibold flex items-center justify-center transition"><i class="fas fa-expand mr-2"></i><span class="hidden sm:inline">Tela Cheia</span></button>
         </div>
     </nav>
 
@@ -89,20 +106,19 @@
         <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black to-transparent"></div>
     </section>
 
-    <!-- Slide 2: Timeline -->
+    <!-- Slide 2: Timeline (Competições OBR) -->
     <section id="slide2" class="slide flex items-center justify-center circuit-pattern">
         <div class="container mx-auto px-6 py-20">
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
                 <span class="text-green-400">Competições</span> da OBR
                 <span class="block text-xl text-gray-400 mt-2">2023 e 2024</span>
             </h2>
-            
             <div class="max-w-4xl mx-auto">
                 <div class="relative">
                     <!-- Timeline connector -->
                     <div class="absolute left-1/2 h-full w-1 bg-green-500 bg-opacity-30 transform -translate-x-1/2"></div>
                     
-                    <!-- Timeline item 1 -->
+                    <!-- Timeline item 1: 2023 -->
                     <div class="mb-16 flex justify-between items-center w-full">
                         <div class="order-1 w-5/12"></div>
                         <div class="z-20 flex items-center order-1 bg-green-500 shadow-xl w-8 h-8 rounded-full">
@@ -110,18 +126,28 @@
                         </div>
                         <div class="order-1 tech-card w-5/12 px-6 py-4 rounded-lg">
                             <h3 class="text-xl font-bold text-green-400 mb-2">2023 - Primeira Competição</h3>
-                            <p class="text-gray-300">
+                            <p class="text-gray-300 mb-2">
                                 Centro de Convenções da UFPE<br>
-                                Experiência inicial com programação de robôs<br>
-                                Desafios de montagem e calibração
+                                Primeira viagem para Recife e primeira competição.<br>
+                                Começou às 9h da manhã, com 2 equipes ativas (a terceira não conseguiu montar o robô a tempo).<br>
+                                <span class="font-semibold">Regras rígidas:</span> ambiente isolado para competidores, sem contato com tutores.<br>
+                                <span class="font-semibold">Desafios:</span> sensores de luz, obstáculos variados, curvas, rampas, desvios e resgate de vítimas.
                             </p>
+                            <div class="mt-2">
+                                <span class="block text-sm text-yellow-400 font-semibold mb-1">Problemas enfrentados:</span>
+                                <ul class="list-disc pl-5 text-gray-400 text-sm">
+                                    <li>Robô com peso mal distribuído</li>
+                                    <li>Falta de tração e aerodinâmica</li>
+                                    <li>Falhas no sistema durante o round</li>
+                                </ul>
+                            </div>
                             <div class="mt-3 flex items-center text-sm text-gray-400">
                                 <i class="fas fa-map-marker-alt mr-2"></i> Recife, PE
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Timeline item 2 -->
+                    <!-- Timeline item 2: 2024 -->
                     <div class="mb-16 flex justify-between items-center w-full flex-row-reverse">
                         <div class="order-1 w-5/12"></div>
                         <div class="z-20 flex items-center order-1 bg-green-500 shadow-xl w-8 h-8 rounded-full">
@@ -129,18 +155,29 @@
                         </div>
                         <div class="order-1 tech-card w-5/12 px-6 py-4 rounded-lg">
                             <h3 class="text-xl font-bold text-green-400 mb-2">2024 - Segunda Participação</h3>
-                            <p class="text-gray-300">
+                            <p class="text-gray-300 mb-2">
                                 Recife Expo Center<br>
-                                Aplicação de aprendizados anteriores<br>
-                                Melhorias na programação e estratégia
+                                Ambiente mais moderno: ar-condicionado, lanche para alunos, apresentações de realidade virtual, drones, humanoides.<br>
+                                Mesma estrutura de regras e fases, mas com mais experiência e preparo da equipe.
                             </p>
+                            <div class="mt-2">
+                                <span class="block text-sm text-green-400 font-semibold mb-1">Destaques:</span>
+                                <ul class="list-disc pl-5 text-gray-400 text-sm">
+                                    <li>Robô principal travou por falha na CPU</li>
+                                    <li>Segundo robô simples com 1 sensor foi adaptado com 2 sensores e ultrassônico → teve melhor pontuação!</li>
+                                </ul>
+                            </div>
+                            <div class="mt-2">
+                                <span class="block text-sm text-yellow-400 font-semibold mb-1">Lição aprendida:</span>
+                                <span class="text-gray-400">O simples bem-feito funciona melhor que o complexo mal executado.</span>
+                            </div>
                             <div class="mt-3 flex items-center text-sm text-gray-400">
                                 <i class="fas fa-map-marker-alt mr-2"></i> Recife, PE
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Timeline item 3 -->
+                    <!-- Timeline item 3: Lições -->
                     <div class="mb-16 flex justify-between items-center w-full">
                         <div class="order-1 w-5/12"></div>
                         <div class="z-20 flex items-center order-1 bg-green-500 shadow-xl w-8 h-8 rounded-full">
@@ -148,18 +185,21 @@
                         </div>
                         <div class="order-1 tech-card w-5/12 px-6 py-4 rounded-lg">
                             <h3 class="text-xl font-bold text-green-400 mb-2">Lições Aprendidas</h3>
-                            <p class="text-gray-300">
+                            <p class="text-gray-300 mb-2">
                                 • Simplicidade na programação<br>
                                 • Importância dos testes<br>
                                 • Trabalho em equipe<br>
                                 • Adaptação às regras
                             </p>
+                            <div class="flex items-center bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400 mt-4">
+                                <i class="fas fa-quote-left text-yellow-400 text-2xl mr-3"></i>
+                                <p class="text-gray-700">"A tecnologia é melhor quando une as pessoas." - Matt Mullenweg</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Slide 3: Team Members -->
     <section id="slide3" class="slide flex items-center justify-center hexagon-pattern">
@@ -335,12 +375,11 @@
     </section>
 
     <!-- Slide 4: What is LEGO NXT -->
-    <section id="slide4" class="slide flex items-center justify-center circuit-pattern">
+    <section id="slide4" class="slide flex items-center justify-center hexagon-pattern">
         <div class="container mx-auto px-6 py-20">
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
                 O que é o <span class="text-green-400">LEGO NXT</span>?
             </h2>
-            
             <div class="max-w-6xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div class="tech-card rounded-xl p-8">
@@ -353,7 +392,14 @@
                         <p class="text-gray-300 mb-6">
                             O LEGO Mindstorms NXT é uma plataforma revolucionária da LEGO voltada para educação em robótica, programação e engenharia. Combinando peças tradicionais da LEGO com sensores, motores e um bloco controlador programável, ele permite criar robôs inteligentes capazes de interagir com o ambiente.
                         </p>
-                        
+                        <div class="bg-gray-900 bg-opacity-70 p-6 rounded-xl mb-6">
+                            <p class="font-semibold mb-2 text-green-300">Por que é incrível para iniciantes?</p>
+                            <p class="text-gray-200">Programação visual (blocos) facilita o aprendizado por representar funções complexas de forma simples. Você pode criar um robô que anda com apenas dois blocos: mover + loop!</p>
+                        </div>
+                        <div class="bg-gray-900 bg-opacity-70 p-6 rounded-xl mb-6">
+                            <p class="font-semibold mb-2 text-green-300">Exemplo prático:</p>
+                            <p class="text-gray-200">No NXT, para fazer um robô andar infinitamente, basta usar um bloco de movimento e um bloco de repetição. Em linguagens tradicionais, seriam várias linhas de código!</p>
+                        </div>
                         <div class="grid grid-cols-2 gap-4 mb-6">
                             <div class="flex items-center">
                                 <i class="fas fa-microchip text-green-400 mr-2"></i>
@@ -372,7 +418,6 @@
                                 <span>Porta USB</span>
                             </div>
                         </div>
-                        
                         <div class="bg-gray-800 bg-opacity-50 rounded-lg p-4 border border-gray-700">
                             <h4 class="text-green-400 font-bold mb-2">Por que usar LEGO NXT?</h4>
                             <ul class="text-gray-300 space-y-2">
@@ -394,8 +439,11 @@
                                 </li>
                             </ul>
                         </div>
+                        <div class="mt-6 flex items-center bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400">
+                            <i class="fas fa-quote-left text-yellow-400 text-2xl mr-3"></i>
+                            <p class="text-gray-700">"O simples bem-feito funciona melhor que o complexo mal executado."</p>
+                        </div>
                     </div>
-                    
                     <div class="tech-card rounded-xl p-8">
                         <div class="flex justify-center mb-6">
                             <div class="w-64 h-64 bg-gray-800 rounded-lg flex items-center justify-center pulse overflow-hidden">
@@ -403,7 +451,6 @@
                             </div>
                         </div>
                         <h3 class="text-2xl font-bold text-green-400 mb-4">Componentes Principais</h3>
-                        
                         <div class="space-y-4">
                             <div class="flex items-start">
                                 <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
@@ -414,7 +461,6 @@
                                     <p class="text-gray-400 text-sm">O "cérebro" do robô com processador, memória e interfaces</p>
                                 </div>
                             </div>
-                            
                             <div class="flex items-start">
                                 <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                     <i class="fas fa-bolt text-white"></i>
@@ -424,7 +470,6 @@
                                     <p class="text-gray-400 text-sm">3 motores com encoder para movimento preciso</p>
                                 </div>
                             </div>
-                            
                             <div class="flex items-start">
                                 <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                     <i class="fas fa-eye text-white"></i>
@@ -434,7 +479,6 @@
                                     <p class="text-gray-400 text-sm">Toque, som, luz, ultrassônico e mais</p>
                                 </div>
                             </div>
-                            
                             <div class="flex items-start">
                                 <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                     <i class="fas fa-puzzle-piece text-white"></i>
@@ -447,10 +491,8 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="mt-12 tech-card rounded-xl p-8">
                     <h3 class="text-2xl font-bold text-green-400 mb-6 text-center">Sensores do LEGO NXT</h3>
-                    
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-green-400 transition">
                             <div class="flex justify-center mb-4">
@@ -463,7 +505,6 @@
                                 Detecta intensidade luminosa (0-100%). Essencial para seguir linhas em competições.
                             </p>
                         </div>
-                        
                         <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-green-400 transition">
                             <div class="flex justify-center mb-4">
                                 <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center overflow-hidden">
@@ -475,7 +516,6 @@
                                 Mede distâncias (0-255 cm) usando ondas sonoras. Detecta obstáculos.
                             </p>
                         </div>
-                        
                         <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-green-400 transition">
                             <div class="flex justify-center mb-4">
                                 <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center overflow-hidden">
@@ -499,7 +539,6 @@
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
                 Como programamos <span class="text-green-400">com blocos</span>?
             </h2>
-            
             <div class="max-w-6xl mx-auto">
                 <div class="tech-card rounded-xl p-8 mb-10">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -508,8 +547,7 @@
                             <p class="text-gray-300 mb-6">
                                 O software NXT-G utiliza uma abordagem visual de programação por blocos, onde cada bloco representa uma função ou comando específico. Os blocos são conectados para formar o fluxo do programa.
                             </p>
-                            
-                            <div class="bg-gray-800 bg-opacity-50 rounded-lg p-4 border border-gray-700 mb-6">
+                            <div class="bg-gray-900 bg-opacity-70 rounded-lg p-4 border border-gray-700 mb-6">
                                 <h4 class="text-green-400 font-bold mb-2">Vantagens</h4>
                                 <ul class="text-gray-300 space-y-2">
                                     <li class="flex items-start">
@@ -526,8 +564,15 @@
                                     </li>
                                 </ul>
                             </div>
+                            <div class="bg-gray-800 bg-opacity-70 p-4 rounded-lg mb-4">
+                                <p class="font-mono text-sm mb-2">// Exemplo: Seguir linha branca</p>
+                                <p class="font-mono text-sm">Se sensor_luz &lt; 30 → virar esquerda</p>
+                                <p class="font-mono text-sm">Se sensor_luz &gt; 30 → virar direita</p>
+                            </div>
+                            <div class="bg-gray-900 bg-opacity-70 p-4 rounded-lg">
+                                <p>Imagine que o sensor está lendo 40 (branco), 20 (verde/preto). O robô precisa seguir o branco. Se ele ler valor &lt; 30, ele corrige para a esquerda, se for &gt; 30, para a direita. Simples assim com blocos de decisão.</p>
+                            </div>
                         </div>
-                        
                         <div class="flex justify-center">
                             <div class="w-full max-w-md bg-gray-800 rounded-lg overflow-hidden">
                                 <div class="bg-gray-900 p-3 flex items-center">
@@ -566,9 +611,7 @@
                         </div>
                     </div>
                 </div>
-                
                 <h3 class="text-3xl font-bold text-center text-green-400 mb-8">Principais Blocos de Programação</h3>
-                
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="tech-card rounded-lg p-6 hover:border-green-400 transition">
                         <div class="flex justify-center mb-4">
@@ -581,7 +624,6 @@
                             Controla os motores para fazer o robô andar para frente, trás ou girar.
                         </p>
                     </div>
-                    
                     <div class="tech-card rounded-lg p-6 hover:border-green-400 transition">
                         <div class="flex justify-center mb-4">
                             <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center">
@@ -593,7 +635,6 @@
                             Repete um conjunto de comandos continuamente ou um número específico de vezes.
                         </p>
                     </div>
-                    
                     <div class="tech-card rounded-lg p-6 hover:border-green-400 transition">
                         <div class="flex justify-center mb-4">
                             <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center">
@@ -605,7 +646,6 @@
                             Toma decisões baseadas em entradas de sensores ou condições lógicas.
                         </p>
                     </div>
-                    
                     <div class="tech-card rounded-lg p-6 hover:border-green-400 transition">
                         <div class="flex justify-center mb-4">
                             <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center">
@@ -618,6 +658,20 @@
                         </p>
                     </div>
                 </div>
+                <div class="mt-8 bg-gray-900 bg-opacity-70 p-6 rounded-xl border-l-4 border-green-400">
+                    <h3 class="font-semibold text-green-400 mb-3">Por que programação em blocos é ideal para iniciantes?</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-200">
+                        <li>Visualização clara do fluxo do programa</li>
+                        <li>Redução de erros de sintaxe</li>
+                        <li>Fácil compreensão de estruturas lógicas</li>
+                        <li>Rápida prototipagem de ideias</li>
+                        <li>Base sólida para aprender linguagens textuais depois</li>
+                    </ul>
+                </div>
+                <div class="mt-6 flex items-center bg-gray-800 p-4 rounded-lg border-l-4 border-green-400">
+                    <i class="fas fa-quote-left text-green-400 text-2xl mr-3"></i>
+                    <p class="text-gray-200">"A lógica simples é o segredo para robôs confiáveis."</p>
+                </div>
             </div>
         </div>
     </section>
@@ -628,7 +682,6 @@
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
                 Sensores e o <span class="text-green-400">Cérebro do Robô</span>
             </h2>
-            
             <div class="max-w-6xl mx-auto">
                 <div class="tech-card rounded-xl p-8 mb-10">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -637,7 +690,6 @@
                             <p class="text-gray-300 mb-6">
                                 Os sensores são os olhos, ouvidos e mãos do robô LEGO NXT. Eles permitem que o robô perceba e interaja com seu ambiente, tornando possível comportamentos autônomos e inteligentes.
                             </p>
-                            
                             <div class="mb-6">
                                 <h4 class="text-xl font-bold text-gray-300 mb-2 flex items-center">
                                     <i class="fas fa-lightbulb text-green-400 mr-2"></i>
@@ -656,8 +708,8 @@
                                     </div>
                                     <div class="mt-1 text-xs text-gray-400">Valor lido: 30 (pista escura)</div>
                                 </div>
+                                <div class="mt-2 text-sm text-yellow-300">Problema: verde e preto têm valores parecidos → pode confundir o robô. Solução: ajustes manuais no código para diferenciar os dois (média, desvios, contexto).</div>
                             </div>
-                            
                             <div>
                                 <h4 class="text-xl font-bold text-gray-300 mb-2 flex items-center">
                                     <i class="fas fa-wave-square text-green-400 mr-2"></i>
@@ -676,9 +728,9 @@
                                     </div>
                                     <div class="mt-1 text-xs text-gray-400">Distância: 40 cm</div>
                                 </div>
+                                <div class="mt-2 text-sm text-blue-300">Funciona como o "olho do robô". Usado para detectar obstáculos e desviar automaticamente.</div>
                             </div>
                         </div>
-                        
                         <div>
                             <div class="bg-gray-800 rounded-lg p-6 mb-6">
                                 <h4 class="text-xl font-bold text-gray-300 mb-4 text-center">Fluxo de Decisão do Robô</h4>
@@ -688,12 +740,10 @@
                                         <div class="w-16 h-16 bg-gray-700 rounded-lg flex items-center justify-center mb-4 mx-auto">
                                             <i class="fas fa-robot text-2xl text-green-400"></i>
                                         </div>
-                                        
                                         <!-- Arrows -->
                                         <div class="absolute left-1/2 transform -translate-x-1/2 -bottom-4 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-green-400"></div>
                                     </div>
                                 </div>
-                                
                                 <!-- Decision diamond -->
                                 <div class="flex justify-center my-4">
                                     <div class="w-24 h-24 bg-blue-900 bg-opacity-50 transform rotate-45 flex items-center justify-center">
@@ -703,7 +753,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                
                                 <!-- Arrows from decision -->
                                 <div class="flex justify-between px-8">
                                     <div class="text-center">
@@ -715,7 +764,6 @@
                                         <div class="text-xs mt-1 text-red-400">Não</div>
                                     </div>
                                 </div>
-                                
                                 <!-- Actions -->
                                 <div class="grid grid-cols-2 gap-4 mt-4">
                                     <div class="bg-green-900 bg-opacity-30 p-3 rounded text-center">
@@ -727,8 +775,12 @@
                                         <div class="text-xs text-white">Virar à direita</div>
                                     </div>
                                 </div>
+                                <div class="block-code mt-6">
+                                    <p>Se sensor_ultrassonico &lt; 20 cm → virar para esquerda</p>
+                                    <p>Se sensor_luz &lt; 30 → ajustar para direita</p>
+                                </div>
+                                <div class="mt-2 text-xs text-gray-400 text-center">Essa lógica simples permite navegação autônoma em circuitos complexos.</div>
                             </div>
-                            
                             <div class="bg-gray-800 rounded-lg p-6">
                                 <h4 class="text-xl font-bold text-gray-300 mb-4 text-center">NXT Intelligent Brick</h4>
                                 <div class="flex justify-center mb-4">
@@ -781,11 +833,9 @@
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
                 <span class="text-red-400">Erros</span> e <span class="text-green-400">Acertos</span>
             </h2>
-            
             <div class="max-w-6xl mx-auto">
                 <div class="tech-card rounded-xl p-8 mb-10">
                     <h3 class="text-2xl font-bold text-center text-gray-300 mb-8">Lições Aprendidas nas Competições</h3>
-                    
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="bg-gray-800 rounded-lg p-6 border border-red-500 border-opacity-50">
                             <div class="flex items-center mb-4">
@@ -816,7 +866,6 @@
                                 Às vezes, menos é mais. A complexidade pode ser inimiga da confiabilidade.
                             </div>
                         </div>
-                        
                         <div class="bg-gray-800 rounded-lg p-6 border border-green-500 border-opacity-50">
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
@@ -848,10 +897,8 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="tech-card rounded-xl p-8">
                     <h3 class="text-2xl font-bold text-center text-gray-300 mb-8">Relação entre Montagem e Programação</h3>
-                    
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class="bg-gray-800 rounded-lg p-6 text-center">
                             <div class="flex justify-center mb-4">
@@ -864,7 +911,6 @@
                                 A distância entre as rodas e o posicionamento dos sensores afetam diretamente os parâmetros de programação.
                             </p>
                         </div>
-                        
                         <div class="bg-gray-800 rounded-lg p-6 text-center">
                             <div class="flex justify-center mb-4">
                                 <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center">
@@ -876,7 +922,6 @@
                                 Um robô desbalanceado requer ajustes na potência dos motores e pode afetar a precisão dos sensores.
                             </p>
                         </div>
-                        
                         <div class="bg-gray-800 rounded-lg p-6 text-center">
                             <div class="flex justify-center mb-4">
                                 <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center">
@@ -889,7 +934,6 @@
                             </p>
                         </div>
                     </div>
-                    
                     <div class="mt-8 bg-gray-900 bg-opacity-50 rounded-lg p-6 border border-gray-700">
                         <div class="flex flex-col md:flex-row items-center">
                             <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
@@ -916,6 +960,66 @@
                                         <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
                                         <span>Priorizar robustez sobre complexidade</span>
                                     </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 bg-gray-900 bg-opacity-50 rounded-lg p-6 border border-gray-700">
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                                <div class="w-32 h-32 bg-gray-800 rounded-full flex items-center justify-center border-2 border-green-400">
+                                    <i class="fas fa-lightbulb text-5xl text-green-400"></i>
+                                </div>
+                            </div>
+                            <div class="md:w-2/3 md:pl-8">
+                                <h4 class="text-xl font-bold text-green-400 mb-3">Erros comuns e lições aprendidas</h4>
+                                <span class="block text-gray-400 text-sm mb-4">O que mais impactou nosso desempenho nas competições</span>
+                                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                                    <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-yellow-400">
+                                        <div class="flex items-center mb-3">
+                                            <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+                                                <i class="fas fa-star text-yellow-500"></i>
+                                            </div>
+                                            <h3 class="text-lg font-semibold text-yellow-600">Capricho é tudo</h3>
+                                        </div>
+                                        <p class="text-gray-700">Montagem interfere diretamente na execução. Um robô mal montado não executa bem mesmo com o melhor código.</p>
+                                    </div>
+                                    <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-red-400">
+                                        <div class="flex items-center mb-3">
+                                            <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                                                <i class="fas fa-bug text-red-500"></i>
+                                            </div>
+                                            <h3 class="text-lg font-semibold text-red-500">Teste antes da competição</h3>
+                                        </div>
+                                        <p class="text-gray-700">Bugs acontecem nas horas mais críticas. Teste exaustivamente em condições similares às da competição.</p>
+                                    </div>
+                                    <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-green-400">
+                                        <div class="flex items-center mb-3">
+                                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                                <i class="fas fa-users text-green-500"></i>
+                                            </div>
+                                            <h3 class="text-lg font-semibold text-green-500">Trabalho em equipe</h3>
+                                        </div>
+                                        <p class="text-gray-700">Comunicação entre programador e montador é essencial. Ambos precisam entender as limitações e possibilidades.</p>
+                                    </div>
+                                    <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-blue-400">
+                                        <div class="flex items-center mb-3">
+                                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                                <i class="fas fa-gem text-blue-500"></i>
+                                            </div>
+                                            <h3 class="text-lg font-semibold text-blue-500">Regra de ouro</h3>
+                                        </div>
+                                        <p class="text-gray-700">"Não complique o simples." Às vezes a solução mais básica é a mais eficiente.</p>
+                                    </div>
+                                </div>
+                                <hr class="border-gray-700 mb-8">
+                                <h3 class="font-semibold text-green-400 mb-3 flex items-center"><i class="fas fa-list-check mr-2"></i>Minhas principais lições:</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center text-gray-200"><i class="fas fa-check-circle text-green-400 mr-3"></i>Comece com projetos simples e vá aumentando a complexidade</li>
+                                    <li class="flex items-center text-gray-200"><i class="fas fa-check-circle text-green-400 mr-3"></i>Documente tudo - configurações, códigos, ajustes</li>
+                                    <li class="flex items-center text-gray-200"><i class="fas fa-check-circle text-green-400 mr-3"></i>Tenha um plano B (robô reserva, peças extras)</li>
+                                    <li class="flex items-center text-gray-200"><i class="fas fa-check-circle text-green-400 mr-3"></i>O tempo de competição passa rápido - treine sob pressão</li>
+                                    <li class="flex items-center text-gray-200"><i class="fas fa-check-circle text-green-400 mr-3"></i>Celebre cada pequeno progresso</li>
                                 </ul>
                             </div>
                         </div>
@@ -1153,7 +1257,7 @@ End
                         <p class="text-gray-300 mb-6">
                             Este exemplo mostra um programa básico de seguidor de linha usando 4 motores no LEGO NXT. O robô utiliza um loop contínuo e uma condição baseada no sensor de luz para decidir o movimento dos motores. Ideal para robôs maiores ou que precisam de mais força e estabilidade.
                         </p>
-                        <div class="bg-gray-800 bg-opacity-50 rounded-lg p-4 border border-gray-700 mb-6">
+                        <div class="bg-gray-800 bg-opacity-70 rounded-lg p-4 border border-gray-700 mb-6">
                             <h4 class="text-green-400 font-bold mb-2">Lógica do Programa</h4>
                             <ul class="text-gray-300 space-y-2">
                                 <li class="flex items-start">
@@ -1196,15 +1300,79 @@ End
 End</pre>
                         </div>
                         <p class="text-gray-400 mt-4 text-sm">
-                            <strong>Explicação:</strong> O robô lê o valor do sensor de luz. Se detectar linha preta (valor baixo), ativa os motores do lado esquerdo para corrigir a direção. Se detectar branco (valor alto), ativa os motores do lado direito. Isso mantém o robô seguindo a linha de forma simples e eficiente, mesmo com 4 motores.
+                            <strong>Explicação:</strong> O robô lê o valor do sensor de luz. Se detectar linha preta (valor baixo), ativa os motores do lado esquerdo para corrigir a direção. Se detectar branco (valor alto), ativa os motores do lado direito.
+
                         </p>
                     </div>
                     <div class="flex justify-center">
-                        <div class="w-full max-w-md bg-gray-800 rounded-lg overflow-hidden flex flex-col items-center">
-                            <img src="progama.png" alt="Exemplo Seguidor de Linha 4 Motores" class="object-contain w-full h-64 mb-4" />
-                            <span class="text-gray-400 text-xs">Exemplo visual de programação NXT-G para 4 motores</span>
+                        <div class="w-full max-w-md bg-gray-800 rounded-lg overflow-hidden">
+                            <div class="bg-gray-900 p-3 flex items-center">
+                                <div class="flex space-x-2">
+                                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                </div>
+                                <div class="ml-4 text-sm text-gray-400">NXT-G - program.nxt</div>
+                            </div>
+                            <div class="p-4">
+                                <div class="bg-blue-900 bg-opacity-50 p-3 rounded mb-2 border-l-4 border-blue-400">
+                                    <div class="text-white text-sm">Start</div>
+                                </div>
+                                <div class="bg-green-900 bg-opacity-50 p-3 rounded mb-2 border-l-4 border-green-400">
+                                    <div class="text-white text-sm">Move [A+B] - Power: 75 - Duration: Unlimited</div>
+                                </div>
+                                <div class="bg-purple-900 bg-opacity-50 p-3 rounded mb-2 border-l-4 border-purple-400">
+                                    <div class="text-white text-sm">Loop</div>
+                                    <div class="ml-4 mt-2">
+                                        <div class="bg-yellow-900 bg-opacity-50 p-2 rounded mb-1 border-l-4 border-yellow-400">
+                                            <div class="text-white text-sm">Switch [Light Sensor]</div>
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-2 ml-4">
+                                            <div class="bg-red-900 bg-opacity-50 p-2 rounded border-l-4 border-red-400">
+                                                <div class="text-white text-sm">[Case 1] Move Left</div>
+                                            </div>
+                                            <div class="bg-blue-900 bg-opacity-50 p-2 rounded border-l-4 border-blue-400">
+                                                <div class="text-white text-sm">[Case 2] Move Right</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 11: Closing/Final Message -->
+    <section id="slide-apresentacao" class="slide flex items-center justify-center hexagon-pattern">
+        <div class="container mx-auto px-6 py-20">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="flex justify-center mb-6">
+                    <div class="w-24 h-24 rounded-full bg-gray-800 flex items-center justify-center shadow-lg">
+                        <i class="fas fa-graduation-cap text-green-400 text-4xl"></i>
+                    </div>
+                </div>
+                <h2 class="text-4xl font-bold text-green-400 mb-6">Encerramento & Dicas Finais</h2>
+                <div class="bg-gray-900 bg-opacity-70 p-8 rounded-xl mb-8 max-w-2xl mx-auto">
+                    <p class="text-xl mb-6 text-gray-200">A robótica LEGO NXT foi o que me despertou para a lógica de programação, trabalho em equipe e resolução de problemas.</p>
+                    <p class="text-xl mb-6 text-gray-200">Se você está começando agora, lembre-se: comece simples, pense com lógica e divirta-se com cada desafio!</p>
+                    <p class="text-lg text-green-400">Estude os blocos, teste bastante, não tenha medo de errar e compartilhe suas descobertas com a equipe. O aprendizado é contínuo!</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="perfil.png" alt="Equipe de robótica" class="rounded-full w-32 h-32 object-cover mb-4 shadow-lg">
+                    <p class="font-semibold text-gray-200">Gabriel Silva Oliveira</p>
+                    <p class="text-gray-400 mb-4">Equipe ScriptBot - EREM Fernando Bezerra</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/gabrielsylvaoly/reels/" class="text-green-400 hover:text-green-600" target="_blank" rel="noopener"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="https://github.com/Gabriel0900" class="text-green-400 hover:text-green-600" target="_blank" rel="noopener"><i class="fab fa-github text-2xl"></i></a>
+                        <a href="https://linkedin.com/in/gabriel-silva-153216360/" class="text-green-400 hover:text-green-600" target="_blank" rel="noopener"><i class="fab fa-linkedin text-2xl"></i></a>
+                    </div>
+                </div>
+                <div class="mt-12">
+                    <p class="text-2xl font-bold text-green-400">"Simplifique. Aprenda. Evolua."</p>
+                    <p class="text-lg text-gray-200 mt-4">O objetivo é que você aprenda do conceito até a aplicação real, sem perder a diversão no caminho. Celebre cada progresso!</p>
                 </div>
             </div>
         </div>
@@ -1215,6 +1383,8 @@ End</pre>
         <span id="close-modal" class="absolute top-6 right-8 text-4xl text-white cursor-pointer select-none" title="Fechar">&times;</span>
         <img id="modal-img" src="" alt="Imagem ampliada" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl border-4 border-green-400" />
     </div>
+
+    <script src="https://kit.fontawesome.com/1c2e7b6e2a.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>

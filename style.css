@@ -13,10 +13,23 @@ h1, h2, h3 {
     font-family: 'Orbitron', sans-serif;
 }
 
+.hexagon-pattern {
+    background-image:
+        repeating-linear-gradient(120deg, #18325a 0px, #18325a 2px, transparent 2px, transparent 60px),
+        repeating-linear-gradient(60deg, #18325a 0px, #18325a 2px, transparent 2px, transparent 60px),
+        linear-gradient(135deg, rgba(0,255,255,0.05) 0%, rgba(0,0,0,0.2) 100%);
+    background-size: 70px 120px, 70px 120px, cover;
+    background-position: center 0, center 0, center 0;
+    transition: background-position 0.3s;
+}
+
 .circuit-pattern {
-    background-image: 
-        linear-gradient(to bottom, rgba(0, 100, 255, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
+    background-image:
+        linear-gradient(to bottom, rgba(0, 100, 255, 0.08) 1px, transparent 1px),
+        url('data:image/svg+xml;utf8,<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="60" width="2" height="120" fill="%2300ffe7" opacity="0.08"/><rect y="60" width="120" height="2" fill="%2300ffe7" opacity="0.08"/><circle cx="60" cy="60" r="30" stroke="%2300ffe7" stroke-width="2" opacity="0.08"/></svg>');
+    background-size: 20px 20px, 120px 120px;
+    background-position: center 0, center 0;
+    transition: background-position 0.3s;
 }
 
 .slide {
@@ -29,13 +42,12 @@ h1, h2, h3 {
     text-shadow: 0 0 10px rgba(0, 255, 150, 0.7);
 }
 
+/* Tech-card padrão para todas as seções */
 .tech-card {
-    background: rgba(10, 20, 40, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 255, 150, 0.3);
-    box-shadow: 0 0 20px rgba(0, 255, 150, 0.1);
-    transition: all 0.3s ease;
+  background: rgba(24, 24, 24, 0.95);
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.18);
+  border: 1px solid #222;
 }
 
 .tech-card:hover {
@@ -82,4 +94,90 @@ h1, h2, h3 {
     0% { box-shadow: 0 0 0 0 rgba(0, 255, 150, 0.7); }
     70% { box-shadow: 0 0 0 10px rgba(0, 255, 150, 0); }
     100% { box-shadow: 0 0 0 0 rgba(0, 255, 150, 0); }
+}
+
+/* Cores e backgrounds para blocos de dicas, exemplos, citações */
+.bg-dica, .bg-exemplo, .bg-citacao {
+  background: #181e1e;
+  color: #d1fae5;
+  border-left: 4px solid #22c55e;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.bg-citacao {
+  border-left-color: #facc15;
+  color: #facc15;
+}
+
+.bg-exemplo {
+  border-left-color: #38bdf8;
+}
+
+.bg-dica {
+  border-left-color: #22c55e;
+}
+
+/* Cores para títulos e textos principais */
+.text-green-400 {
+  color: #22c55e !important;
+}
+.text-gray-300 {
+  color: #d1d5db !important;
+}
+.text-gray-200 {
+  color: #e5e7eb !important;
+}
+.text-gray-400 {
+  color: #9ca3af !important;
+}
+.bg-gray-900 {
+  background: #18181b !important;
+}
+.bg-gray-800 {
+  background: #27272a !important;
+}
+.bg-gray-700 {
+  background: #3f3f46 !important;
+}
+
+/* Bordas e detalhes */
+.border-green-400 {
+  border-color: #22c55e !important;
+}
+
+body.tech-bg {
+    background: #0a1833;
+    color: #cbeafe;
+}
+nav {
+    position: relative;
+    background: #0a1833 !important;
+    border-bottom: 1px solid #18325a !important;
+    z-index: 50;
+}
+nav a, nav span, nav i, nav button {
+    color: #cbeafe !important;
+}
+nav a:hover, nav button:hover {
+    color: #38bdf8 !important;
+    background: #11224d !important;
+}
+#main-menu a.active, #mobile-menu a.active {
+    color: #38bdf8 !important;
+    font-weight: bold;
+}
+#main-menu button, #fullscreen-btn, #fullscreen-btn-mobile {
+    background: #18325a !important;
+    color: #cbeafe !important;
+    border: none;
+}
+#main-menu button:hover, #fullscreen-btn:hover, #fullscreen-btn-mobile:hover {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+#mobile-menu {
+    background: #0a1833 !important;
+    border-top: 1px solid #18325a !important;
 }

@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Jornada com Robótica LEGO NXT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            scroll-snap-align: start;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background-color: #3b82f6;
+        }
+        
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 1.5rem;
+            width: 2px;
+            height: calc(100% + 1rem);
+            background-color: #3b82f6;
+        }
+        
+        .timeline-item:last-child:after {
+            display: none;
+        }
+        
+        .robot-part {
+            transition: all 0.3s ease;
+        }
+        
+        .robot-part:hover {
+            transform: scale(1.05);
+        }
+        
+        .sensor-card {
+            transition: all 0.3s ease;
+        }
+        
+        .sensor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .block-code {
+            font-family: 'Courier New', monospace;
+            background-color: #1e293b;
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            position: relative;
+        }
+        
+        .block-code:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: #3b82f6;
+            border-radius: 0.5rem 0 0 0.5rem;
+        }
+        
+        .presentation-container {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+        
+        .nav-dots {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+        
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #cbd5e1;
+            margin: 0.5rem 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot.active {
+            background-color: #3b82f6;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="presentation-container" id="presentation">
+        <!-- Slide 1: Title -->
+        <div class="slide bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="flex justify-center mb-6">
+                    <div class="w-24 h-24 rounded-full bg-white flex items-center justify-center shadow-lg">
+                        <i class="fas fa-robot text-blue-600 text-4xl"></i>
+                    </div>
+                </div>
+                <h1 class="text-5xl font-bold mb-4">Minha Jornada com Robótica LEGO NXT</h1>
+                <p class="text-xl mb-8">Gabriel Silva Oliveira - Equipe ScriptBot</p>
+                <div class="flex justify-center space-x-4">
+                    <div class="px-4 py-2 bg-white text-blue-600 rounded-full font-semibold flex items-center">
+                        <i class="fas fa-trophy mr-2"></i> OBR 2023 & 2024
+                    </div>
+                    <div class="px-4 py-2 bg-white text-blue-600 rounded-full font-semibold flex items-center">
+                        <i class="fas fa-school mr-2"></i> EREM Fernando Bezerra
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 2: Introduction -->
+        <div class="slide bg-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center mb-8">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-user text-blue-600 text-2xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-blue-600">Introdução</h2>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl shadow-sm">
+                    <p class="text-lg mb-4">Olá, meu nome é Gabriel Silva Oliveira, sou programador de robôs LEGO NXT, membro da equipe ScriptBot, e participei duas vezes consecutivas da Olimpíada Brasileira de Robótica, em 2023 e 2024, representando minha escola EREM Fernando Bezerra, de Ouricuri-PE.</p>
+                    <p class="text-lg">Estou aqui para compartilhar minha experiência com robótica educacional e como a programação em blocos mudou minha forma de aprender e ensinar tecnologia.</p>
+                </div>
+                <div class="mt-8 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1581093458171-4e1ca30f59d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Robótica educacional" class="rounded-lg shadow-lg w-full max-w-md">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3: How it started -->
+        <div class="slide bg-gray-100">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center mb-8">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-lightbulb text-blue-600 text-2xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-blue-600">Como tudo começou</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm mb-6">
+                            <p class="text-lg mb-4">Desde pequeno, sempre fui fascinado por tecnologia. Lembro que, em 2011, vi um robô na TV e fiquei maravilhado. Meu pai me trouxe o filme "Homem de Ferro 1", e desde então, sonhei em criar algo como o JARVIS.</p>
+                            <p class="text-lg">Cresci no sítio, na zona rural, e mesmo com pouco acesso à tecnologia, esse sonho permaneceu. Quando entrei na EREM Fernando Bezerra e descobri as eletivas de robótica, vi a oportunidade de transformar aquele sonho em realidade.</p>
+                        </div>
+                        <div class="flex items-center bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400">
+                            <i class="fas fa-quote-left text-yellow-400 text-2xl mr-3"></i>
+                            <p class="text-gray-700">"A tecnologia é melhor quando une as pessoas." - Matt Mullenweg</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Inspiração" class="rounded-lg shadow-lg mb-4">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Zona rural" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 4: OBR Experience -->
+        <div class="slide bg-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center mb-8">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-trophy text-blue-600 text-2xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-blue-600">Experiência nas Competições da OBR</h2>
+                </div>
+                
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">OBR 2023 - Recife (Centro de Convenções da UFPE)</h3>
+                    <div class="timeline-item">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <p class="font-semibold">Primeira viagem para Recife e primeira competição</p>
+                            <p class="text-gray-700">Começou às 9h da manhã, com 2 equipes ativas (a terceira não conseguiu montar o robô a tempo). Regras rígidas: ambiente isolado para competidores, sem contato com tutores.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <p class="font-semibold">Competições divididas em 3 fases (3 rounds)</p>
+                            <p class="text-gray-700">Robôs com sensores de luz, obstáculos variados, desafio de curvas, rampas, desvios e resgate de vítimas.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <p class="font-semibold">Problemas enfrentados</p>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li>Robô com peso mal distribuído</li>
+                                <li>Falta de tração e aerodinâmica</li>
+                                <li>Falhas no sistema durante o round</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">OBR 2024 - Recife Expo Center</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+                            <p class="font-semibold text-green-800">Ambiente mais moderno</p>
+                            <p class="text-gray-700">Ar-condicionado, lanche para alunos, apresentações de realidade virtual, drones, humanoides.</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+                            <p class="font-semibold text-green-800">Mesma estrutura de regras e fases</p>
+                            <p class="text-gray-700">Mas com mais experiência e preparo da equipe.</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+                            <p class="font-semibold text-green-800">Destaques</p>
+                            <p class="text-gray-700">Robô principal travou por falha na CPU. Segundo robô simples com 1 sensor foi adaptado com 2 sensores e ultrassônico → teve melhor pontuação!</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+                            <p class="font-semibold text-green-800">Lição aprendida</p>
+                            <p class="text-gray-700">O simples bem-feito funciona melhor que o complexo mal executado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 5: What is LEGO NXT -->
+        <div class="slide bg-gradient-to-br from-blue-800 to-blue-600 text-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center mb-8">
+                    <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center mr-4">
+                        <i class="fas fa-puzzle-piece text-blue-600 text-2xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold">O que é o LEGO NXT?</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-xl mb-6">Plataforma educacional da LEGO com foco em robótica e lógica de programação.</p>
+                        <div class="bg-white bg-opacity-10 p-6 rounded-xl mb-6">
+                            <p class="font-semibold mb-2">Por que é incrível para iniciantes?</p>
+                            <p>Programação visual (blocos) facilita o aprendizado por representar funções complexas de forma simples.</p>
+                        </div>
+                        <div class="bg-white bg-opacity-10 p-6 rounded-xl">
+                            <p class="font-semibold mb-2">Exemplo prático:</p>
+                            <p>Para fazer um robô andar em código tradicional seriam várias linhas. No NXT, com 2 blocos (mover + loop), o robô já anda infinitamente.</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="LEGO NXT" class="rounded-lg shadow-lg w-full max-w-md">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 6: Robot Assembly -->
+        <div class="slide bg-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center mb-8">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-cogs text-blue-600 text-2xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-blue-600">Montagem do robô</h2>
+                </div>
+                
+                <p class="text-xl mb-6 text-center">Equilíbrio entre estrutura e código</p>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="robot-part bg-gray-100 p-4 rounded-lg text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-cube text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold mb-2">Esqueleto</h3>
+                        <p class="text-sm">Estrutura sólida e equilibrada</p>
+                    </div>
+                    <div class="robot-part bg-gray-100 p-4 rounded-lg text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-bolt text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold mb-2">Motores</h3>
+                        <p class="text-sm">Bem posicionados para subir rampas</p>
+                    </div>
+                    <div class="robot-part bg-gray-100 p-4 rounded-lg text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-weight-hanging text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold mb-2">Peso</h3>
+                        <p class="text-sm">Distribuição correta é essencial</p>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-400">
+                    <h3 class="font-semibold text-yellow-800 mb-3">Dicas essenciais:</h3>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Comece pelo <strong>esqueleto</strong>: estrutura sólida e equilibrada</li>
+                        <li>Motores bem posicionados para subir rampas e vencer obstáculos</li>
+                        <li>Atenção à tração e distribuição de peso</li>
+                        <li>Inspiração: tanques, jipes ou carros como Tesla (base larga, comprimento suficiente)</li>
+                        <li>Montagem mal feita = programação comprometida</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 7: Essential Sensors -->
+        <div class="slide bg-gray-100">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center mb-8">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-satellite-dish text-blue-600 text-2xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-blue-600">Sensores essenciais</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="sensor-card bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-lightbulb text-blue-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Sensor de Luz</h3>
+                        </div>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Trabalha com luz refletida</li>
+                            <li>Branco reflete muito (valor alto), preto absorve (valor baixo)</li>
+                            <li>Problema: verde e preto têm valores parecidos → pode confundir o robô</li>
+                            <li>Solução: ajustes manuais no código para diferenciar os dois (média, desvios, contexto)</li>
+                        </ul>
+                    </div>
+                    <div class="sensor-card bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-wave-square text-blue-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Sensor Ultrassônico</h3>
+                        </div>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Funciona como o "olho do robô"</li>
+                            <li>Emite sinais de som e mede a distância por eco (como morcegos)</li>
+                            <li>Usado para detectar obstáculos e desviar automaticamente</li>
+                            <li>Precisão fundamental para navegação</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-xl">
+                    <h3 class="font-semibold text-blue-800 mb-3">Como programá-los?</h3>
+                    <p class="mb-4">No LEGO NXT, os sensores são configurados através de blocos específicos que interpretam seus valores e tomam decisões.</p>
+                    <div class="block-code mb-4">
+                        <p>Se sensor_ultrassonico &lt; 20 cm → virar para esquerda</p>
+                        <p>Se sensor_luz &lt; 30 → ajustar para direita</p>
+                    </div>
+                    <p>Essa lógica simples permite navegação autônoma em circuitos complexos.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 8: Block Programming -->
+        <div class="slide bg-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center mb-8">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-code text-blue-600 text-2xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-blue-600">Princípios da programação em blocos</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Principais blocos:</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Mover (Move)</p>
+                                    <p class="text-sm text-gray-600">Anda para frente ou para trás</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <i class="fas fa-redo"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Loop (Laço)</p>
+                                    <p class="text-sm text-gray-600">Repete comandos infinitamente</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <i class="fas fa-code-branch"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Switch (Condicional)</p>
+                                    <p class="text-sm text-gray-600">Toma decisões com base em sensores</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Wait (Esperar)</p>
+                                    <p class="text-sm text-gray-600">Aguarda condições específicas</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Sensor Blocks</p>
+                                    <p class="text-sm text-gray-600">Personalização de sensores</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Exemplo "ChatGPTIA"</h3>
+                        <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                            <p class="font-mono text-sm mb-2">// Lógica para seguir linha branca</p>
+                            <p class="font-mono text-sm">Se sensor_luz &lt; 30 → virar esquerda</p>
+                            <p class="font-mono text-sm">Se sensor_luz &gt; 30 → virar direita</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <p>Imagine que o sensor está lendo 40 (branco), 20 (verde/preto). O robô precisa seguir o branco. Se ele ler valor &lt; 30, ele corrige para a esquerda, se for &gt; 30, para a direita. Simples assim com blocos de decisão.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-400">
+                    <h3 class="font-semibold text-yellow-800 mb-3">Por que programação em blocos é ideal para iniciantes?</h3>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Visualização clara do fluxo do programa</li>
+                        <li>Redução de erros de sintaxe</li>
+                        <li>Fácil compreensão de estruturas lógicas</li>
+                        <li>Rápida prototipagem de ideias</li>
+                        <li>Base sólida para aprender linguagens textuais depois</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 9: Common Mistakes -->
+        <div class="slide bg-gray-100">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center mb-8">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-exclamation-triangle text-blue-600 text-2xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-blue-600">Erros comuns e lições aprendidas</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-times text-red-500"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold">Capricho é tudo</h3>
+                        </div>
+                        <p class="text-gray-700">Montagem interfere diretamente na execução. Um robô mal montado não executa bem mesmo com o melhor código.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-bug text-red-500"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold">Teste antes da competição</h3>
+                        </div>
+                        <p class="text-gray-700">Bugs acontecem nas horas mais críticas. Teste exaustivamente em condições similares às da competição.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-users text-red-500"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold">Trabalho em equipe</h3>
+                        </div>
+                        <p class="text-gray-700">Comunicação entre programador e montador é essencial. Ambos precisam entender as limitações e possibilidades.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-gem text-red-500"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold">Regra de ouro</h3>
+                        </div>
+                        <p class="text-gray-700">"Não complique o simples." Às vezes a solução mais básica é a mais eficiente.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-xl">
+                    <h3 class="font-semibold text-blue-800 mb-3">Minhas principais lições:</h3>
+                    <ol class="list-decimal pl-5 space-y-2">
+                        <li>Comece com projetos simples e vá aumentando a complexidade</li>
+                        <li>Documente tudo - configurações, códigos, ajustes</li>
+                        <li>Tenha um plano B (robô reserva, peças extras)</li>
+                        <li>O tempo de competição passa rápido - treine sob pressão</li>
+                        <li>Celebre cada pequeno progresso</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 10: Future Missions -->
+        <div class="slide bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="flex justify-center mb-6">
+                    <div class="w-24 h-24 rounded-full bg-white flex items-center justify-center shadow-lg">
+                        <i class="fas fa-rocket text-blue-600 text-4xl"></i>
+                    </div>
+                </div>
+                <h2 class="text-4xl font-bold mb-6">Missões futuras e materiais de estudo</h2>
+                
+                <div class="bg-white bg-opacity-10 p-6 rounded-xl mb-8 max-w-2xl mx-auto">
+                    <p class="text-xl mb-4">Estarei disponibilizando em breve:</p>
+                    <ul class="list-disc list-inside space-y-2 text-left max-w-md mx-auto">
+                        <li>Um conteúdo com explicações de cada bloco do NXT-G</li>
+                        <li>Missões simples para treinar lógica e sensores</li>
+                        <li>Dicas para montar um robô eficiente e fácil de programar</li>
+                    </ul>
+                </div>
+                
+                <p class="text-xl mb-8 max-w-2xl mx-auto">O objetivo é que você aprenda <strong>do conceito até a aplicação real</strong>, sem perder a diversão no caminho.</p>
+                
+                <div class="flex justify-center space-x-4">
+                    <div class="px-4 py-2 bg-white text-blue-600 rounded-full font-semibold flex items-center">
+                        <i class="fas fa-book mr-2"></i> Guia LEGO NXT
+                    </div>
+                    <div class="px-4 py-2 bg-white text-blue-600 rounded-full font-semibold flex items-center">
+                        <i class="fas fa-video mr-2"></i> Tutoriais em Vídeo
+                    </div>
+                    <div class="px-4 py-2 bg-white text-blue-600 rounded-full font-semibold flex items-center">
+                        <i class="fas fa-tasks mr-2"></i> Missões Práticas
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 11: Closing -->
+        <div class="slide bg-white">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="flex justify-center mb-6">
+                    <div class="w-24 h-24 rounded-full bg-blue-100 flex items-center justify-center shadow-lg">
+                        <i class="fas fa-graduation-cap text-blue-600 text-4xl"></i>
+                    </div>
+                </div>
+                <h2 class="text-4xl font-bold text-blue-600 mb-6">Encerramento</h2>
+                
+                <div class="bg-blue-50 p-8 rounded-xl mb-8 max-w-2xl mx-auto">
+                    <p class="text-xl mb-6">A robótica LEGO NXT foi o que me despertou para a lógica de programação, trabalho em equipe e resolução de problemas.</p>
+                    <p class="text-xl">Se você está começando agora, lembre-se: comece simples, pense com lógica e divirta-se com cada desafio!</p>
+                </div>
+                
+                <div class="flex flex-col items-center">
+                    <img src="https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Equipe de robótica" class="rounded-full w-32 h-32 object-cover mb-4 shadow-lg">
+                    <p class="font-semibold">Gabriel Silva Oliveira</p>
+                    <p class="text-gray-600 mb-4">Equipe ScriptBot - EREM Fernando Bezerra</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-github text-2xl"></i></a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-linkedin text-2xl"></i></a>
+                    </div>
+                </div>
+                
+                <div class="mt-12">
+                    <p class="text-2xl font-bold text-blue-800">"Simplifique. Aprenda. Evolua."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="nav-dots" id="navDots">
+        <!-- Dots will be added by JavaScript -->
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const presentation = document.getElementById('presentation');
+            const navDots = document.getElementById('navDots');
+            const slides = document.querySelectorAll('.slide');
+            
+            // Create navigation dots
+            slides.forEach((slide, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'nav-dot';
+                dot.dataset.index = index;
+                dot.addEventListener('click', () => {
+                    scrollToSlide(index);
+                });
+                navDots.appendChild(dot);
+            });
+            
+            // Update active dot on scroll
+            presentation.addEventListener('scroll', () => {
+                const scrollPosition = presentation.scrollTop;
+                const windowHeight = window.innerHeight;
+                
+                slides.forEach((slide, index) => {
+                    const slideTop = slide.offsetTop;
+                    const slideHeight = slide.offsetHeight;
+                    
+                    if (scrollPosition >= slideTop - windowHeight * 0.3 && 
+                        scrollPosition < slideTop + slideHeight - windowHeight * 0.3) {
+                        document.querySelectorAll('.nav-dot').forEach(dot => {
+                            dot.classList.remove('active');
+                        });
+                        document.querySelector(`.nav-dot[data-index="${index}"]`).classList.add('active');
+                    }
+                });
+            });
+            
+            // Scroll to specific slide
+            function scrollToSlide(index) {
+                const slide = slides[index];
+                presentation.scrollTo({
+                    top: slide.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Set first dot as active initially
+            document.querySelector('.nav-dot').classList.add('active');
+        });
+    </script>
+</body>
+</html>
